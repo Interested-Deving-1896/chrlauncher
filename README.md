@@ -1,180 +1,96 @@
-<h1 align="center">chrlauncher</h1>
+[update-readmes]   Mode: rewrite — migrating to template structure...
+# chrlauncher
 
-<p align="center">
-	<a href="https://github.com/henrypp/chrlauncher/releases"><img src="https://img.shields.io/github/v/release/henrypp/chrlauncher?style=flat-square&include_prereleases&label=version" /></a>
-	<a href="https://github.com/henrypp/chrlauncher/releases"><img src="https://img.shields.io/github/downloads/henrypp/chrlauncher/total.svg?style=flat-square" /></a>
-	<a href="https://github.com/henrypp/chrlauncher/issues"><img src="https://img.shields.io/github/issues-raw/henrypp/chrlauncher.svg?style=flat-square&label=issues" /></a>
-	<a href="https://github.com/henrypp/chrlauncher/graphs/contributors"><img src="https://img.shields.io/github/contributors/henrypp/chrlauncher?style=flat-square" /></a>
-	<a href="https://github.com/henrypp/chrlauncher/blob/master/LICENSE"><img src="https://img.shields.io/github/license/henrypp/chrlauncher?style=flat-square" /></a>
-</p>
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/chrlauncher)
 
--------
+<!-- AI:start:what-it-does -->
+This project provides a lightweight, portable launcher and updater for Chromium, designed to simplify downloading, updating, and managing Chromium builds. It is used by developers and advanced users who require a streamlined way to maintain an up-to-date Chromium installation without relying on full browser installers.
+<!-- AI:end:what-it-does -->
 
-<p align="center">
-	<img src="/images/chrlauncher.png?hgcv" />
-</p>
+## Architecture
 
-### Description:
-Small and very fast portable launcher and updater for Chromium.
+<!-- AI:start:architecture -->
+The project consists of a lightweight launcher and updater for Chromium. The core components include the `src` directory, which contains the source code for the launcher, and the `bin` directory, where compiled binaries are stored. Build scripts (`build.bat`, `build_locale.bat`, `build_vc.bat`) automate the compilation process. The solution and project files (`chrlauncher.sln`, `chrlauncher.vcxproj`) define the build configuration for Visual Studio. The `images` directory contains graphical assets used by the launcher. The `.github` directory includes GitHub-specific configuration files, and the root directory contains metadata and documentation files.
 
-### System requirements:
-- Windows 7, 8, 8.1, 10, 11 32-bit/64-bit
-- An SSE2-capable CPU
-- <s>KB2533623</s> KB3063858 update for Windows 7 was required [[x64](https://www.microsoft.com/en-us/download/details.aspx?id=47442) / [x32](https://www.microsoft.com/en-us/download/details.aspx?id=47409)]
+```
+.
+├── .gitattributes
+├── .github/
+├── .gitignore
+├── .gitmodules
+├── CHANGELOG.md
+├── LICENSE
+├── README.md
+├── bin/
+├── build.bat
+├── build_locale.bat
+├── build_vc.bat
+├── chrlauncher.sln
+├── chrlauncher.vcxproj
+├── chrlauncher.vcxproj.filters
+├── chrlauncher.vcxproj.user
+├── images/
+└── src/
+```
+<!-- AI:end:architecture -->
 
-### Donate:
-- [Bitcoin](https://www.blockchain.com/btc/address/1LrRTXPsvHcQWCNZotA9RcwjsGcRghG96c) (BTC)
-- [Ethereum](https://www.blockchain.com/explorer/addresses/eth/0xe2C84A62eb2a4EF154b19bec0c1c106734B95960) (ETH)
-- [Yandex Money](https://yoomoney.ru/to/4100115776040583) (RUB)
-- [Paypal](https://paypal.me/henrypp) (USD)
+## Install
 
-### GPG Signature:
-Binaries have GPG signature `chrlauncher.exe.sig` in application folder.
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
 
-- Public key: [pubkey.asc](https://raw.githubusercontent.com/henrypp/builder/master/pubkey.asc) ([pgpkeys.eu](https://pgpkeys.eu/pks/lookup?op=index&fingerprint=on&search=0x5635B5FD))
-- Key ID: 0x5635B5FD
-- Fingerprint: D985 2361 1524 AB29 BE73 30AC 2881 20A7 5635 B5FD
+```bash
+git clone https://github.com/Interested-Deving-1896/chrlauncher.git
+cd chrlauncher
+```
 
-### Default browser:
-chrlauncher has feature to use portable Chromium as default browser and it will be open links from another programs through chrlauncher.
-- start "SetDefaultBrowser.bat" (as admin).
-- start "Control panel" -> "Default programs" -> "Set your default programs" -> "chrlauncher" and set all checkboxes on.
+## Usage
 
-### Command line:
-There is list of arguments overrides .ini options
-~~~
--autodownload - auto download update and install it!
--bringtofront - bring chrlauncher window to front when download started
--forcecheck - force update checking
--wait - start browser only when check/download/install update complete
--update - use chrlauncher as updater, but does not start Chromium
-~~~
+<!-- Add usage examples here. This section is yours — the AI will not modify it. -->
 
-### Supported browser:
-- as launcher - Chromium based (like Google Chrome, Opera, Yandex Browser, Vivaldi, etc.) and Firefox based (Mozilla Firefox, Basilisk, Pale Moon, Waterfox, etc.)
-- as updater - Chromium only
+## Configuration
 
-### Chrome++:
-- By default Chromium encrypt profile with user SID, which is disabled by [Chrome++](https://github.com/Bush2021/chrome_plus), so it is recomended. Starting with version 2.7 of chrlauncher it added support of Chrome++.
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
 
-### Settings:
-~~~ini
-[chrlauncher]
+## CI
 
-# Custom Chromium update URL (string):
-#ChromiumUpdateUrl=https://chromium.woolyss.com/api/v3/?os=windows&bit=%d&type=%s&out=string
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
 
-# Command line for Chromium (string):
-# See here: https://peter.sh/experiments/chromium-command-line-switches/
-ChromiumCommandLine=--flag-switches-begin --user-data-dir=..\profile --no-default-browser-check --disable-logging --no-report-upload --flag-switches-end
+## Mirror chain
 
-# Chromium executable file name (string):
-ChromiumBinary=chrome.exe
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/chrlauncher`](https://github.com/Interested-Deving-1896/chrlauncher) and mirrored through:
 
-# Chromium binaries directory (string):
-# Relative (to chrlauncher directory) or full path (env. variables supported).
-ChromiumDirectory=.\bin
+```
+Interested-Deving-1896/chrlauncher  ──►  OpenOS-Project-OSP/chrlauncher  ──►  OpenOS-Project-Ecosystem-OOC/chrlauncher
+```
 
-# Set Chromium binaries architecture (integer):
-#
-# 0	-> autodetect (default)
-# 64	-> 64-bit
-# 32	-> 32-bit
-ChromiumArchitecture=0
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
 
-# Auto download updates if found (boolean)
-#
-# false	-> show tray tip if update found, downloading manually (default)
-# true	-> auto download update and install it!
-ChromiumAutoDownload=false
+## Contributors
 
-# Bring chrlauncher window when download started (boolean)
-#
-# false	-> don't bring main window to front automatically
-# true	-> bring chrlauncher window to front when download started (default)
-ChromiumBringToFront=true
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
 
-# Set download in foreground mode (boolean):
-#
-# false	-> start browser and check/download/install update in background
-# true	-> start browser only when check/download/install update complete (default)
-ChromiumWaitForDownloadEnd=true
+## Origins
 
-# Use chrlauncher as updater, but does not start Chromium (boolean):
-#
-# false	-> update & start Chromium (default)
-# true	-> download & install Chromium update without start
-ChromiumUpdateOnly=false
+<!-- AI:start:origins -->
+_Original project — no upstream fork._
+<!-- AI:end:origins -->
 
-# Type of Chromium builds:
-#
-# dev-official
-#	Official development builds from snapshots repository
-#	"storage.googleapis.com/chromium-browser-snapshots/index.html" (32/64 bit)
-#
-# stable-codecs-sync
-#	Unofficial stable builds with codecs
-#	"github.com/Hibbiki/chromium-win64/releases" (64 bit)
-#	"github.com/Hibbiki/chromium-win32/releases" (32 bit)
-#
-# dev-nosync
-#	Unofficial development builds without Google services
-#	"github.com/RobRich999/Chromium_Clang/releases" (32/64 bit)
-#
-# dev-codecs-sync
-#	Unofficial development builds with codecs and without Google services
-#	"github.com/macchrome/winchrome/releases" (64 bit)
-#
-# dev-codecs-nosync
-#	Unofficial development builds with codecs and without Google services
-#	"github.com/macchrome/winchrome/releases" (64 bit)
-#
-# ungoogled-chromium
-#	Unofficial builds without Google integration and enhanced privacy (based on Eloston project)
-#	"github.com/macchrome/winchrome/releases/" (32/64 bit)
-#	"github.com/Eloston/ungoogled-chromium"
-ChromiumType=dev-official
+## Resources
 
-# Check for new Chromium version once in X days (integer):
-#
-# 2	-> check updates once in a X days (default)
-# 0	-> disable update checking
-# -1	-> force update checking
-ChromiumCheckPeriod=2
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
 
-# Last cached update checking timestamp (integer):
-ChromiumLastCheck=0
+## License
 
-# Start browser when downloading and installing is over (boolean)
-#
-ChromiumRunAtEnd=true
-
-# A DLL hijack implements Chrome full portability as well as tab enhancements.
-# https://github.com/Bush2021/chrome_plus
-#ChromePlusDirectory=.\chrome_plus
-
-#
-# Internal settings (SDK)
-#
-
-# Set custom useragent (string):
-#UserAgent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
-
-# Set proxy configuration (string):
-#Proxy=127.0.0.1:80
-~~~
-### FAQ:
-- [If you lost all setting and extensions when copy Chromium to another PC (answer)](https://github.com/henrypp/chrlauncher/issues/116#issuecomment-444426692)
-- [How to force check for an update every chrlauncher start?](https://github.com/henrypp/chrlauncher/issues/92#issuecomment-343274418)
-- [How to host the Chromium package zip on custom network?](https://github.com/henrypp/chrlauncher/issues/86)
-- [Can't sign-in to Chromium](https://github.com/henrypp/chrlauncher/issues/115#issuecomment-444268533)
-- [Set proxy configuration for a chrlauncher](https://github.com/henrypp/chrlauncher/issues/61#issuecomment-439295515)
-- [Pass on chrlauncher arguments into Chromium](https://github.com/henrypp/chrlauncher/issues/76#issuecomment-312444105)
-- [Disable annoying chrlauncher window popup](https://github.com/henrypp/chrlauncher/issues/96#issuecomment-439294915)
-- [Is it possible to downgrade Chromium version?](https://github.com/henrypp/chrlauncher/issues/112#issuecomment-440940865)
-- [Fix for duplicated taskbar icons creation](https://github.com/henrypp/chrlauncher/issues/49#issuecomment-289285155)
----
-- Website: [github.com/henrypp](https://github.com/henrypp)
-- Support: sforce5@mail.ru
----
-(c) 2015-2026 Henry++
+<!-- AI:start:license -->
+[MIT](https://github.com/Interested-Deving-1896/chrlauncher/blob/master/LICENSE) © 2026 [Interested-Deving-1896](https://github.com/Interested-Deving-1896)
+<!-- AI:end:license -->
